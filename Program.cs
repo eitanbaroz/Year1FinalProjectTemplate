@@ -19,17 +19,19 @@ class Program
 
     Console.WriteLine("Server started. Listening for requests...");
     Console.WriteLine("Main page on http://localhost:5000/website/index.html");
+    
+    
+    /*─────────────────────────────────────╮
+    │ Creating the database context object │
+    ╰─────────────────────────────────────*/
+    var database = new Database();
+
 
     /*─────────────────────────╮
     │ Processing HTTP requests │
     ╰─────────────────────────*/
     while (true)
     {
-      /*─────────────────────────────────────╮
-      │ Creating the database context object │
-      ╰─────────────────────────────────────*/
-      var databaseContext = new DatabaseContext();
-
       /*────────────────────────────╮
       │ Waiting for an HTTP request │
       ╰────────────────────────────*/
@@ -46,12 +48,12 @@ class Program
         /*───────────────────────────╮
         │ Handeling custome requests │
         ╰───────────────────────────*/
-        HandleRequests(serverContext, databaseContext);
+        HandleRequests(serverContext, database);
 
         /*───────────────────────────────╮
         │ Saving changes to the database │
         ╰───────────────────────────────*/
-        databaseContext.SaveChanges();
+        database.SaveChanges();
 
       }
       catch (Exception e)
@@ -68,7 +70,7 @@ class Program
     }
   }
 
-  static void HandleRequests(HttpListenerContext serverContext, DatabaseContext databaseContext)
+  static void HandleRequests(HttpListenerContext serverContext, Database databaseContext)
   {
     var request = serverContext.Request;
     var response = serverContext.Response;
@@ -77,7 +79,7 @@ class Program
   }
 }
 
-class DatabaseContext : DbContextWrapper
+class Database : DbContextWrapper
 {
-  public DatabaseContext() : base("Database") { }
+  public Database() : base("Database") { }
 }
