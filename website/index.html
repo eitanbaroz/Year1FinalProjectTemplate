@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Click Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+
+  <script>
+
+  </script>
+
+
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: right;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .add-task-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .btn:last-child {
+      margin-right: 0;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="header">
+    <div class="btn-container">
+      <a href="signup.html" class="btn">Sign Up</a>
+      <a href="login.html" class="btn">Login</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="title">
+      Task Manager
+    </div>
+    <button class="add-task-btn">Add Task</button>
+    <!-- Your task manager content goes here -->
+  </div>
+</body>
 
 </html>
