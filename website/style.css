@@ -1,0 +1,111 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    /* Decrease the base font size */
+    background-image: url('images/BGblue.jpg');
+    background-size: cover;
+    /* This ensures the image covers the entire background */
+    /* Optionally, you can add more properties like background-repeat, background-position, etc. */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    /* Decrease padding */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 25px;
+    /* Decrease header font size */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    /* Decrease margin */
+}
+
+.column {
+    flex: 1;
+    max-width: 250px;
+    /* Decrease column width */
+    padding: 10px;
+    /* Decrease padding */
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    margin: 5px;
+    /* Decrease margin */
+    border-radius: 3px;
+    /* Decrease border radius */
+    border-top: 3px solid #333;
+    /* Decrease top border thickness */
+}
+
+.column h2 {
+    font-size: 16px;
+    /* Decrease heading font size */
+}
+
+.add-task-btn {
+    background-color: #0b97d8;
+    color: white;
+    padding: 6px 12px;
+    /* Decrease button padding */
+    border: none;
+    border-radius: 3px;
+    /* Decrease button border radius */
+    cursor: pointer;
+    margin-top: 5px;
+    /* Decrease button margin */
+    font-size: 12px;
+    /* Decrease button font size */
+}
+
+.add-task-btn:hover {
+    background-color: #0b97d8;
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    /* Decrease padding */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+    /* Decrease margin */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    /* Decrease font size */
+}
+
+
+.SQ {
+    width: 50px;
+    height: 50px;
+    border: black;
+    margin-right: auto;
+    margin-left: auto;
+}

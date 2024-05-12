@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Click Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header>
+    <h1>TASK MANAGER</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="column">
+      <h2>New Task</h2>
+      <!-- Add your content for new tasks here -->
+      <button class="add-task-btn" id="add-new-task">Add Task</button>
+    </div>
+    <div class="column">
+      <h2>In Progress</h2>
+      <!-- Add your content for tasks in progress here -->
+      <button class="add-task-btn" id="add-in-progress-task">Add Task</button>
+    </div>
+    <div class="column">
+      <h2>Done</h2>
+      <!-- Add your content for completed tasks here -->
+      <button class="add-task-btn" id="add-done-task">Add Task</button>
+    </div>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
 
 </html>
