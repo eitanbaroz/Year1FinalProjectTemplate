@@ -1,0 +1,95 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 18px;
+    color: #fff ;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    /* Adjust the height based on your header and navbar heights */
+}
+
+.add-task-container {
+    width: 100%;
+    text-align: center;
+}
+
+.square {
+    width: 400px;
+    height: 350px;
+    background-color: #333;
+    border-radius: 20px;
+    margin: 0 auto;
+    /* Center the square horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    text-align: center;
+    color: #fff;
+}
+
+.input-container input {
+    width: 300px;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-container textarea {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
