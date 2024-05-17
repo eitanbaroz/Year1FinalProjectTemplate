@@ -109,3 +109,18 @@ nav a {
     margin-right: auto;
     margin-left: auto;
 }
+
+.add-btn {
+    background-color: #0b97d8;
+    color: white;
+    padding: 6px 12px;
+    /* Decrease button padding */
+    border: none;
+    border-radius: 3px;
+    /* Decrease button border radius */
+    cursor: pointer;
+    margin-top: 5px;
+    /* Decrease button margin */
+    font-size: 18px;
+    /* Decrease button font size */
+}
