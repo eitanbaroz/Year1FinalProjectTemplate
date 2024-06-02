@@ -1,4 +1,4 @@
-import{send} from "./_utils";
+import {send} from "./_utils";
 import Cookies  from "./_cookies";
 
 /**@type {HTMLInputElement} */
@@ -11,6 +11,7 @@ let passwordInput = document.getElementById("passwordInput");
 let submitButton = document.getElementById("submitButton");
 
 submitButton.onclick = async function(){
+    console.log("somethig");
     /**@type {HTMLInputElement} */
     let id = await send("/signUp",{
         username: usernameInput.value,
