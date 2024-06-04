@@ -83,7 +83,7 @@ class Program
 
     if (absPath == "/signUp")
     {
-      (string username, string password) = request.GetBody<(string,string)>();
+      (string username, string password) = request.GetBody<(string, string)>();
 
       var userId = Uuid.NewDatabaseFriendly(UUIDNext.Database.SQLite).ToString();
 
@@ -92,6 +92,19 @@ class Program
 
       response.Write(userId);
       Console.Write("signup");
+    }
+
+    else if (absPath == "/logIn")
+    {
+      (string username, string password) = request.GetBody<(string, string)>();
+
+      User user = database.Users.First(
+        u => u.Username == username && u.Password == password
+      )!;
+
+      Console.WriteLine(user.Username + " " + user.Password);
+
+      response.Write(user.Id);
     }
   }
 }

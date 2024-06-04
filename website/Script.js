@@ -14,9 +14,16 @@ addInProgressTaskLink.addEventListener('click', handleAddTask);
 addDoneTaskLink.addEventListener('click', handleAddTask);
 
 
-// Function to handle the "Add Task" click event
-function handleAddTask() {
+/**@type {HTMLButtonElement} */
+let AddTask = document.getElementsByClassName('add-task-button');
+
+AddTask.onclick = function () {
+    if (Cookies.get("id") == undefined) {
+        alert("log in first");
+    }
+    else{
     window.location.href = 'AddTask.html';
+}
 }
 
 Logout.onclick = function () {
