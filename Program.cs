@@ -106,8 +106,33 @@ class Program
 
       response.Write(user.Id);
     }
+
+    else if (absPath == "/addTask")
+    {
+      (string title, string date, string description) =
+        request.GetBody<(string, string, string)>();
+
+      Task task = new Task(title, date, description);
+
+      database.Tasks.Add(task);
+    }
+
+    else if (absPath == "/getPreviews")
+    {
+      var previews = database.Tasks.Select(
+        task => new
+        {
+          id = task.Id,
+          title = task.Title,
+          date = task.date
+        }
+      ).ToArray();
+
+      response.Write(previews);
+    }
   }
 }
+
 
 class User(string id, string username, string password)
 {
@@ -120,8 +145,16 @@ class User(string id, string username, string password)
 class Database : DbContextWrapper
 {
   public DbSet<User> Users { get; set; }
+  public DbSet<Task> Tasks { get; set; }
 
   public Database() : base("Database") { }
 }
 
-
+class Task(string title, string date, string description)
+{
+  [Key]
+  public int Id { get; set; }
+  public string Title { get; set; } = title;
+  public string date { get; set; } = date;
+  public string Description { get; set; } = description;
+}
