@@ -1,6 +1,11 @@
+@font-face {
+    font-family: "";
+    src: url("fonts/TEXAT\ BOLD\ PERSONAL\ USE___.otf");
+}
+
 /* Basic styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'texas';
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -22,7 +27,7 @@ header {
 header h1 {
     font-size: 25px;
     /* Decrease header font size */
-    font-family: Georgia, serif;
+    font-family: 'texas';
 }
 
 .container {
@@ -80,7 +85,7 @@ nav {
     color: #fff;
     padding: 5px;
     /* Decrease padding */
-    font-family: Georgia, serif;
+    font-family: 'texas';
 }
 
 nav ul {
