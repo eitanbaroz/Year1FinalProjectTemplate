@@ -1,4 +1,5 @@
 import Cookies from "./_cookies";
+import { send } from "./_utils";
 /**@type {HTMLButtonElement} */
 let Logout = document.getElementById("logout");
 
@@ -19,11 +20,12 @@ let AddTask = document.getElementsByClassName('add-task-btn')[0];
 
 /**
  * @typedef Preview
- * @property {number} id
- * @property {string} title
- * @property {string} imageSource
+ * @property {number} Id
+ * @property {string} Title
+ * @property {string} date
+ * @property {string} Description
+ * @property {string} UserId
  * */
-
 
 /**@type {HTMLDivElement} */
 let previewsContainer = document.getElementById("previewsContainer");
@@ -37,24 +39,24 @@ AddTask.onclick = function () {
     }
 }
 
-AddTask2.onclick = function () {
-    if (Cookies.get("id") == undefined) {
-        alert("log in first");
-    }
-    else {
-        window.location.href = 'AddTask.html';
-    }
-}
+// AddTask2.onclick = function () {
+//     if (Cookies.get("id") == undefined) {
+//         alert("log in first");
+//     }
+//     else {
+//         window.location.href = 'AddTask.html';
+//     }
+// }
 
 
-AddTask3.onclick = function () {
-    if (Cookies.get("id") == undefined) {
-        alert("log in first");
-    }
-    else {
-        window.location.href = 'AddTask.html';
-    }
-}
+// AddTask3.onclick = function () {
+//     if (Cookies.get("id") == undefined) {
+//         alert("log in first");
+//     }
+//     else {
+//         window.location.href = 'AddTask.html';
+//     }
+// }
 
 
 Logout.onclick = function () {
@@ -64,26 +66,26 @@ Logout.onclick = function () {
 
 /**@type {Preview[]} */
 let previews = await send("/getPreviews");
-
-
 for (let i = 0; i < previews.length; i++) {
-    let previewA = createPreviewA(previews[i]);
-}
+    console.log(previews);
 
-/**
- * @param {Preview} preview
- * @returns {HTMLAnchorElement} 
- */
-function createPreviewA(preview) {
-    let a = document.createElement("a");
-    a.classList.add("preview");
-    a.href = "book.html?bookId=" + preview.id;
+    let previewDiv = document.createElement("div");
+    previewDiv.classList.add("column");
 
     let titleDiv = document.createElement("div");
-    titleDiv.innerText = preview.title;
-    a.appendChild(titleDiv);
+    titleDiv.innerText = previews[i].Title;
+    previewDiv.appendChild(titleDiv);
 
-    return a;
+    let dateDiv = document.createElement("div");
+    dateDiv.innerText = previews[i].date;
+    previewDiv.appendChild(dateDiv);
+
+    let descriptionDiv = document.createElement("div");
+    descriptionDiv.innerText = previews[i].Description;
+    previewDiv.appendChild(descriptionDiv);
+
+    previewsContainer.appendChild(previewDiv);
+
+    console.log(previewDiv);
 }
-
 

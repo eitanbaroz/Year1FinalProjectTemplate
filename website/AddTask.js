@@ -1,3 +1,4 @@
+import Cookies from "./_cookies";
 import { send } from "./_utils";
 
 /**@type {HTMLInputElement} */
@@ -17,7 +18,8 @@ addButton.onclick = function () {
     let task = {
         title: titleInput.value,
         description: descriptionTextarea.value,
-        date: dateinput.value
+        date: dateinput.value,
+        userId: Cookies.get("id")
     };
    
 

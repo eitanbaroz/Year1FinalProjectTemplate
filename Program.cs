@@ -109,24 +109,17 @@ class Program
 
     else if (absPath == "/addTask")
     {
-      (string title, string date, string description) =
-        request.GetBody<(string, string, string)>();
+      (string title, string date, string description, string userId) =
+        request.GetBody<(string, string, string, string)>();
 
-      Task task = new Task(title, date, description);
+      Task task = new Task(title, date, description, userId);
 
       database.Tasks.Add(task);
     }
 
     else if (absPath == "/getPreviews")
     {
-      var previews = database.Tasks.Select(
-        task => new
-        {
-          id = task.Id,
-          title = task.Title,
-          date = task.date
-        }
-      ).ToArray();
+      var previews = database.Tasks.ToArray();
 
       response.Write(previews);
     }
@@ -150,11 +143,15 @@ class Database : DbContextWrapper
   public Database() : base("Database") { }
 }
 
-class Task(string title, string date, string description)
+class Task(string title, string date, string description, string userId)
 {
   [Key]
   public int Id { get; set; }
   public string Title { get; set; } = title;
   public string date { get; set; } = date;
   public string Description { get; set; } = description;
+  public string UserId { get; set; } = userId;
+
+  [ForeignKey("UserId")]
+  public User? User { get; set; }
 }

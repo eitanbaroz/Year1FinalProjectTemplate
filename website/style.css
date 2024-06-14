@@ -50,6 +50,7 @@ header h1 {
     margin: 5px;
     /* Decrease margin */
     border-radius: 3px;
+    /* border-width: 5px; */
     /* Decrease border radius */
     border-top: 3px solid #333;
     /* Decrease top border thickness */
@@ -73,7 +74,7 @@ header h1 {
     /* Decrease button margin */
     font-size: 12px;
     /* Decrease button font size */
-    
+
 }
 
 .add-task-btn:hover {
@@ -131,4 +132,10 @@ nav a {
     /* Decrease button margin */
     font-size: 18px;
     /* Decrease button font size */
+}
+
+#previewsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
