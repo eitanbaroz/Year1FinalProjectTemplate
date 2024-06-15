@@ -49,7 +49,7 @@ header h1 {
     border: 1px solid #ddd;
     margin: 5px;
     /* Decrease margin */
-    border-radius: 3px;
+    border-radius: 5px;
     /* border-width: 5px; */
     /* Decrease border radius */
     border-top: 3px solid #333;
@@ -138,4 +138,42 @@ nav a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.task {
+    flex: 1;
+    max-width: 250px;
+    /* Decrease column width */
+    padding: 10px;
+    /* Decrease padding */
+    box-sizing: border-box;
+    background-color: #01366832;
+    border: 1px solid #040000;
+    margin: 5px;
+    /* Decrease margin */
+   
+    /* border-width: 5px; */
+    /* Decrease border radius */
+    border-top: 3px solid #333;
+    /* Decrease top border thickness */
+
+}
+
+.task-title {
+    font-size: 28px;
+    color: #0863eb;
+    font-family: monospace;
+    
+}
+
+.task-date {
+    font-size: 14px;
+    color: #000000;
+}
+
+.task-description {
+    font-size: 12x;
+    color: #000000;
+    line-height: 1.5;
+    border-radius: 5px;
 }

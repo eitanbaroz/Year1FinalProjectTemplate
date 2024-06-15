@@ -117,12 +117,19 @@ class Program
       database.Tasks.Add(task);
     }
 
+
+
     else if (absPath == "/getPreviews")
     {
       var previews = database.Tasks.ToArray();
 
-      response.Write(previews);
-    }
+      //for (int i = 0; i < previews.Length; i++){
+        //if(previews[i].UserId==){
+
+        //}
+      }
+        response.Write(previews);
+    } 
   }
 }
 

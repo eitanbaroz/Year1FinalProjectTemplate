@@ -70,19 +70,22 @@ for (let i = 0; i < previews.length; i++) {
     console.log(previews);
 
     let previewDiv = document.createElement("div");
-    previewDiv.classList.add("column");
+    previewDiv.classList.add("task");
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = previews[i].Title;
     previewDiv.appendChild(titleDiv);
+    titleDiv.classList.add("task-title");
 
     let dateDiv = document.createElement("div");
     dateDiv.innerText = previews[i].date;
     previewDiv.appendChild(dateDiv);
+    dateDiv.classList.add("task-description");
 
     let descriptionDiv = document.createElement("div");
     descriptionDiv.innerText = previews[i].Description;
     previewDiv.appendChild(descriptionDiv);
+    descriptionDiv.classList.add("task-date");
 
     previewsContainer.appendChild(previewDiv);
 
