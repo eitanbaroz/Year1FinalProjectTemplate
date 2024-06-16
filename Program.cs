@@ -121,15 +121,22 @@ class Program
 
     else if (absPath == "/getPreviews")
     {
+      string id = request.GetBody<string>();
+
       var previews = database.Tasks.ToArray();
 
-      //for (int i = 0; i < previews.Length; i++){
-        //if(previews[i].UserId==){
+      Task[] NIGGERS = [];
+      for (int i = 0; i < previews.Length; i++)
+      {
+        if (previews[i].UserId == id)
+        {
+          NIGGERS = [.. NIGGERS, previews[i]];
+        }
 
-        //}
       }
-        response.Write(previews);
-    } 
+
+      response.Write(NIGGERS);
+    }
   }
 }
 
