@@ -65,9 +65,11 @@ Logout.onclick = function () {
 }
 
 /**@type {Preview[]} */
-let previews = await send("/getPreviews");
+let previews = await send("/getPreviews", Cookies.get("id"));
+console.log(previews);
+console.log(Cookies.get("id"));
+
 for (let i = 0; i < previews.length; i++) {
-    console.log(previews);
 
     let previewDiv = document.createElement("div");
     previewDiv.classList.add("column");
@@ -75,6 +77,8 @@ for (let i = 0; i < previews.length; i++) {
     let titleDiv = document.createElement("div");
     titleDiv.innerText = previews[i].Title;
     previewDiv.appendChild(titleDiv);
+
+
 
     let dateDiv = document.createElement("div");
     dateDiv.innerText = previews[i].date;
@@ -85,7 +89,5 @@ for (let i = 0; i < previews.length; i++) {
     previewDiv.appendChild(descriptionDiv);
 
     previewsContainer.appendChild(previewDiv);
-
-    console.log(previewDiv);
 }
 
