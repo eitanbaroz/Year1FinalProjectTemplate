@@ -5,6 +5,7 @@ using System.Reflection.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Microsoft.Extensions.DependencyModel.Resolution;
 using UUIDNext;
 using static Project.Utils;
 
@@ -109,10 +110,10 @@ class Program
 
     else if (absPath == "/addTask")
     {
-      (string title, string date, string description, string userId) =
-        request.GetBody<(string, string, string, string)>();
+      (string title, string date, string description, string userId, bool done) =
+        request.GetBody<(string, string, string, string, bool)>();
 
-      Task task = new Task(title, date, description, userId);
+      Task task = new Task(title, date, description, userId, done);
 
       database.Tasks.Add(task);
     }
@@ -132,11 +133,18 @@ class Program
         {
           NIGGERS = [.. NIGGERS, previews[i]];
         }
-
       }
-
       response.Write(NIGGERS);
+
     }
+
+    else if (absPath == "/done")
+    {
+
+    }
+
+
+
   }
 }
 
@@ -157,7 +165,7 @@ class Database : DbContextWrapper
   public Database() : base("Database") { }
 }
 
-class Task(string title, string date, string description, string userId)
+class Task(string title, string date, string description, string userId, bool done)
 {
   [Key]
   public int Id { get; set; }
@@ -168,4 +176,6 @@ class Task(string title, string date, string description, string userId)
 
   [ForeignKey("UserId")]
   public User? User { get; set; }
+
+  public bool Done { get; set; } = done;
 }

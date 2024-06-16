@@ -25,6 +25,7 @@ let AddTask = document.getElementsByClassName('add-task-btn')[0];
  * @property {string} date
  * @property {string} Description
  * @property {string} UserId
+ * @property {bool} done
  * */
 
 /**@type {HTMLDivElement} */
@@ -70,27 +71,62 @@ console.log(previews);
 console.log(Cookies.get("id"));
 
 for (let i = 0; i < previews.length; i++) {
+    if (previews[i].done == true) {
+        let previewDiv = document.createElement("div");
+        previewDiv.classList.add("task");
 
-    let previewDiv = document.createElement("div");
-    previewDiv.classList.add("task");
+        let titleDiv = document.createElement("div");
+        titleDiv.innerText = previews[i].Title;
+        previewDiv.appendChild(titleDiv);
+        titleDiv.classList.add("task-title");
 
-    let titleDiv = document.createElement("div");
-    titleDiv.innerText = previews[i].Title;
-    previewDiv.appendChild(titleDiv);
-    titleDiv.classList.add("task-title");
+        let dateDiv = document.createElement("div");
+        dateDiv.innerText = previews[i].date;
+        previewDiv.appendChild(dateDiv);
+        dateDiv.classList.add("task-date");
 
 
+        let descriptionDiv = document.createElement("div");
+        descriptionDiv.innerText = previews[i].Description;
+        previewDiv.appendChild(descriptionDiv);
+        descriptionDiv.classList.add("task-description");
 
-    let dateDiv = document.createElement("div");
-    dateDiv.innerText = previews[i].date;
-    previewDiv.appendChild(dateDiv);
-    dateDiv.classList.add("task-description");
 
-    let descriptionDiv = document.createElement("div");
-    descriptionDiv.innerText = previews[i].Description;
-    previewDiv.appendChild(descriptionDiv);
-    descriptionDiv.classList.add("task-date");
+        let button = document.createElement("button");
+        previewDiv.appendChild(button);
+        button.innerText = "DONE"
+        button.classList.add("add-task-btn");
 
-    previewsContainer.appendChild(previewDiv);
+        previewsContainerDone.appendChild(previewDiv);
+    }
+
+    else {
+        let previewDiv = document.createElement("div");
+        previewDiv.classList.add("task");
+
+        let titleDiv = document.createElement("div");
+        titleDiv.innerText = previews[i].Title;
+        previewDiv.appendChild(titleDiv);
+        titleDiv.classList.add("task-title");
+
+        let dateDiv = document.createElement("div");
+        dateDiv.innerText = previews[i].date;
+        previewDiv.appendChild(dateDiv);
+        dateDiv.classList.add("task-date");
+
+
+        let descriptionDiv = document.createElement("div");
+        descriptionDiv.innerText = previews[i].Description;
+        previewDiv.appendChild(descriptionDiv);
+        descriptionDiv.classList.add("task-description");
+
+
+        let button = document.createElement("button");
+        previewDiv.appendChild(button);
+        button.innerText = "DONE"
+        button.classList.add("add-task-btn");
+
+        previewsContainer.appendChild(previewDiv);
+    }
 }
 
