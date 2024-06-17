@@ -126,25 +126,24 @@ class Program
 
       var previews = database.Tasks.ToArray();
 
-      Task[] NIGGERS = [];
+      Task[] filteredArray = [];
       for (int i = 0; i < previews.Length; i++)
       {
         if (previews[i].UserId == id)
         {
-          NIGGERS = [.. NIGGERS, previews[i]];
+          filteredArray = [.. filteredArray, previews[i]];
         }
       }
-      response.Write(NIGGERS);
+      response.Write(filteredArray);
 
     }
 
     else if (absPath == "/done")
     {
-
+      int id = request.GetBody<int>();
+      Task task = database.Tasks.Find(id)!;
+      task.Done = true;
     }
-
-
-
   }
 }
 
