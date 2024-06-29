@@ -1,6 +1,6 @@
 /* Basic styling */
 body {
-    font-family: 'texas';
+    font-family: monospace;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -15,7 +15,7 @@ header {
 
 header h1 {
     font-size: 18px;
-    color:  #fff ;
+    color: #fff;
 }
 
 main {
@@ -67,6 +67,7 @@ main {
     border-radius: 5px;
     font-size: 16px;
     resize: none;
+
 }
 
 /* Navbar styling */

@@ -27,7 +27,7 @@ header {
 header h1 {
     font-size: 25px;
     /* Decrease header font size */
-    font-family: 'texas';
+    font-family: monospace;
 }
 
 .container {
@@ -54,6 +54,7 @@ header h1 {
     /* Decrease border radius */
     border-top: 3px solid #333;
     /* Decrease top border thickness */
+    font-family: monospace;
 }
 
 .column h2 {
@@ -87,7 +88,7 @@ nav {
     color: #fff;
     padding: 5px;
     /* Decrease padding */
-    font-family: 'texas';
+    font-family: monospace;
 }
 
 nav ul {
@@ -172,7 +173,7 @@ nav a {
 }
 
 .task-description {
-    font-size: 12x;
+    font-size: 12px;
     color: #000000;
     line-height: 1.5;
     border-radius: 5px;
@@ -194,7 +195,8 @@ nav a {
     /* Decrease border radius */
     border-top: 3px solid #333;
     /* Decrease top border thickness */
-    font-size: 50px;
+    font-size: 30px;
+    font-family: monospace;
 }
 
 #previewsContainerDone {

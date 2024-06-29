@@ -46,6 +46,7 @@ for (let i = 0; i < previews.length; i++) {
     let previewDiv = document.createElement("div");
     previewDiv.classList.add("task");
 
+
     let titleDiv = document.createElement("div");
     titleDiv.innerText = previews[i].Title;
     previewDiv.appendChild(titleDiv);
@@ -67,6 +68,10 @@ for (let i = 0; i < previews.length; i++) {
     previewDiv.appendChild(button);
     button.innerText = "DONE"
     button.classList.add("add-task-btn");
+    button.onclick = async function () {
+        await send("/done", previews[i].Id);
+    }
+ //כאן ניתן לשנות את הסדר של המשימה!
 
 
     if (previews[i].Done) {
@@ -75,6 +80,8 @@ for (let i = 0; i < previews.length; i++) {
     else {
         previewsContainer.appendChild(previewDiv);
     }
+
+   
 
 
 }
